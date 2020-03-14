@@ -15,5 +15,4 @@ ingredients: Ingredient[] = [
 
   ngOnInit(): void {
   }
-
 }
