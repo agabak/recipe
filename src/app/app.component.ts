@@ -6,11 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  eblaToAddNewService = true;
+loadedFeature = 'recipe';
   constructor() {
-     setTimeout(() => {
-       this.eblaToAddNewService = false;
-     }, 600);
   }
   name = 'online';
+
+  onNavigate(feature: string) {
+      this.loadedFeature = feature;
+  }
 }

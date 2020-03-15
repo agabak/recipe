@@ -15,4 +15,12 @@ ingredients: Ingredient[] = [
 
   ngOnInit(): void {
   }
+
+  onAdd(event: Ingredient) {
+     this.ingredients.push(event);
+  }
+
+  onDelete(event: Ingredient) {
+    this.ingredients.splice(0, 1);
+  }
 }

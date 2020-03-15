@@ -6,9 +6,10 @@
 <hr>
 <div class="row">
   <div class="col-xs-12">
-    <a href="#" class="list-group-item clearfix" *ngFor="let item of recipes">
-      <app-recipe-item [recipe]="item"></app-recipe-item>
-    </a>
+    <app-recipe-item
+      *ngFor="let recipeValue of recipes"
+       [recipe]="recipeValue"
+        (recipeSelected) = "onRecipeSelected(recipeValue)"></app-recipe-item>
   </div>
 </div>
 
