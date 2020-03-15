@@ -10,9 +10,9 @@ export class RecipeItemComponent {
 // tslint:disable-next-line:no-input-rename
 @Input('recipe') recipe: Recipe;
 // tslint:disable-next-line:no-output-rename
-@Output('recipeSelected') recipeSeletecd = new EventEmitter<void>();
+@Output('recipeSelected') recipeSeleteced = new EventEmitter<void>();
 
 onSelected() {
-  this.recipeSeletecd.emit();
+  this.recipeSeleteced.emit();
 }
 }
