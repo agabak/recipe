@@ -17,10 +17,14 @@ ingredients: Ingredient[] = [
   }
 
   onAdd(event: Ingredient) {
-     this.ingredients.push(event);
+    if (event.name !== '' || event.amount.toString() !== '') {
+      this.ingredients.push(event);
+    }
   }
 
   onDelete(event: Ingredient) {
+    if (event.name !== '' || event.amount.toString() !== '') {
     this.ingredients.splice(0, 1);
+    }
   }
 }
