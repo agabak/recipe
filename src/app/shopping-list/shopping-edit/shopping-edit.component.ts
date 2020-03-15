@@ -12,7 +12,7 @@ export class ShoppingEditComponent implements OnInit {
  // tslint:disable-next-line:no-input-rename
  // @Input('ingredient') ingredient: Ingredient;
  // tslint:disable-next-line:no-output-rename
- @Output('ingredient') ingredientOut = new EventEmitter<Ingredient>();
+ @Output('ingredientAdded') ingredientAdded = new EventEmitter<Ingredient>();
  @ViewChild('nameInput') name: ElementRef;
  @ViewChild('amountInput') amount: ElementRef;
   constructor() { }
@@ -20,6 +20,8 @@ export class ShoppingEditComponent implements OnInit {
   ngOnInit(): void {
   }
     add() {
-       this.ingredientOut.emit({name: this.name.nativeElement.value, amount: this.amount.nativeElement.value});
+      const newIngredient = new Ingredient(this.name.nativeElement.value,
+                                           this.amount.nativeElement.value);
+      this.ingredientAdded.emit(newIngredient);
     }
 }
