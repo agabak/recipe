@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Ingredient } from '../shared/ingredient.model';
-import { ShoppingService } from './shopping-edit/shopping.service';
+import { ShoppingService } from './shopping.service';
 
 @Component({
   selector: 'app-shopping-list',
@@ -13,9 +13,12 @@ ingredients: Ingredient[] = [];
 
   ngOnInit(): void {
     this.getAllIngredients();
+    this.shoppingService.ingredienntChanged.subscribe((ingredients: Ingredient[]) => {
+      this.ingredients = ingredients;
+    });
   }
 
   getAllIngredients() {
-  this.ingredients = this.shoppingService.Ingredients;
+  this.ingredients = this.shoppingService.getAllIngredients();
   }
 }

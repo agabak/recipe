@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Ingredient } from 'src/app/shared/ingredient.model';
-import { ShoppingService } from './shopping.service';
+import { ShoppingService } from '../shopping.service';
 
 @Component({
   selector: 'app-shopping-edit',
