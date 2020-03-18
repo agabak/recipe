@@ -23,11 +23,10 @@ ingredienntChanged = new EventEmitter<Ingredient[]>();
     delete(event: Ingredient) {
       if (event.name !== '' || event.amount.toString() !== '') {
       const index = this.ingredients.findIndex(ing => ing.name === event.name);
-      console.log(index);
-      if (index > -1) {
-        this.ingredients.splice(index, 1);
-        this.ingredienntChanged.emit(this.ingredients.slice());
-       }
+
+      if (index <= -1) {  return; }
+      this.ingredients.splice(index, 1);
+      this.ingredienntChanged.emit(this.ingredients.slice());
       }
     }
 
