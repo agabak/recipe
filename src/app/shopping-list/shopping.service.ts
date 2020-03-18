@@ -22,8 +22,12 @@ ingredienntChanged = new EventEmitter<Ingredient[]>();
 
     delete(event: Ingredient) {
       if (event.name !== '' || event.amount.toString() !== '') {
-      this.ingredients.splice(0, 1);
-      this.ingredienntChanged.emit(this.ingredients.slice());
+      const index = this.ingredients.findIndex(ing => ing.name === event.name);
+      console.log(index);
+      if (index > -1) {
+        this.ingredients.splice(index, 1);
+        this.ingredienntChanged.emit(this.ingredients.slice());
+       }
       }
     }
 

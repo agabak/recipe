@@ -24,7 +24,6 @@ export class ShoppingEditComponent implements OnInit {
 
        delete() {
         const ingredient = new Ingredient(this.name.nativeElement.value, this.amount.nativeElement.value);
-        console.log(ingredient);
         this.shoppingService.delete(ingredient);
        }
 }
